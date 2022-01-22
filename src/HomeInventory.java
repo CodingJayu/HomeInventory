@@ -15,12 +15,12 @@ public class HomeInventory extends JFrame
 {
 // Toolbar
 JToolBar inventoryToolBar = new JToolBar();
-JButton newButton = new JButton(new ImageIcon("new.gif"));
-JButton deleteButton = new JButton(new ImageIcon("delete.gif"));
-JButton saveButton = new JButton(new ImageIcon("save.gif"));
-JButton previousButton = new JButton(new ImageIcon("previous.gif"));
-JButton nextButton = new JButton(new ImageIcon("next.gif"));
-JButton printButton = new JButton(new ImageIcon("print.gif"));
+JButton newButton = new JButton(new ImageIcon("new.png"));
+JButton deleteButton = new JButton(new ImageIcon("delete.png"));
+JButton saveButton = new JButton(new ImageIcon("save.png"));
+JButton previousButton = new JButton(new ImageIcon("previous.png"));
+JButton nextButton = new JButton(new ImageIcon("next.png"));
+JButton printButton = new JButton(new ImageIcon("print.png"));
 JButton exitButton = new JButton();
 
 // Frame
@@ -66,14 +66,15 @@ public HomeInventory()
     setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     addWindowListener(new WindowAdapter()
     {
-    public void windowClosing(WindowEvent evt)
-    {
-    exitForm(evt);
-    }
+        public void windowClosing(WindowEvent evt)
+        {
+            exitForm(evt);
+        }
     });
 
     getContentPane().setLayout(new GridBagLayout());
-GridBagConstraints gridConstraints;
+    GridBagConstraints gridConstraints;
+
 inventoryToolBar.setFloatable(false);
 inventoryToolBar.setBackground(Color.BLUE);
 inventoryToolBar.setOrientation(SwingConstants.VERTICAL);
@@ -83,11 +84,13 @@ gridConstraints.gridy = 0;
 gridConstraints.gridheight = 8;
 gridConstraints.fill = GridBagConstraints.VERTICAL;
 getContentPane().add(inventoryToolBar, gridConstraints);
+
 inventoryToolBar.addSeparator();
 Dimension bSize = new Dimension(70, 50);
 newButton.setText("New");
 sizeButton(newButton, bSize);
 newButton.setToolTipText("Add New Item");
+
 newButton.setHorizontalTextPosition(SwingConstants.CENTER);
 newButton.setVerticalTextPosition(SwingConstants.BOTTOM);
 newButton.setFocusable(false);
@@ -95,10 +98,10 @@ inventoryToolBar.add(newButton);
 
 newButton.addActionListener(new ActionListener()
 {
-public void actionPerformed(ActionEvent e)
-{
-newButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        newButtonActionPerformed(e);
+    }
 });
 
 deleteButton.setText("Delete");
@@ -113,9 +116,9 @@ inventoryToolBar.add(deleteButton);
 deleteButton.addActionListener(new ActionListener()
 {
     public void actionPerformed(ActionEvent e)
-{
-deleteButtonActionPerformed(e);
-}
+    {
+        deleteButtonActionPerformed(e);
+    }
 });
 
 saveButton.setText("Save");
@@ -127,11 +130,12 @@ saveButton.setFocusable(false);
 inventoryToolBar.add(saveButton);
 saveButton.addActionListener(new ActionListener()
 {
-public void actionPerformed(ActionEvent e)
-{
-    saveButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        saveButtonActionPerformed(e);
+    }
 });
+
 inventoryToolBar.addSeparator();
 previousButton.setText("Previous");
 sizeButton(previousButton, bSize);
@@ -144,11 +148,12 @@ previousButton.setFocusable(false);
 inventoryToolBar.add(previousButton);
 previousButton.addActionListener(new ActionListener()
 {
-public void actionPerformed(ActionEvent e)
-{
-previousButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        previousButtonActionPerformed(e);
+    }
 });
+
 nextButton.setText("Next");
 sizeButton(nextButton, bSize);
 nextButton.setToolTipText("Display Next Item");
@@ -158,10 +163,10 @@ nextButton.setFocusable(false);
 inventoryToolBar.add(nextButton);
 nextButton.addActionListener(new ActionListener()
 {
-public void actionPerformed(ActionEvent e)
-{
-    //nextButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        //nextButtonActionPerformed(e);
+    }
 });
 
 inventoryToolBar.addSeparator();
@@ -176,10 +181,10 @@ printButton.setFocusable(false);
 inventoryToolBar.add(printButton);
 printButton.addActionListener(new ActionListener()
 {
-public void actionPerformed(ActionEvent e)
-{
-printButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        printButtonActionPerformed(e);
+    }
 });
 
 exitButton.setText("Exit");
@@ -189,10 +194,10 @@ exitButton.setFocusable(false);
 inventoryToolBar.add(exitButton);
 exitButton.addActionListener(new ActionListener()
 {
-public void actionPerformed(ActionEvent e)
-{
-exitButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        exitButtonActionPerformed(e);
+    }
 });
 itemLabel.setText("Inventory Item");
 gridConstraints = new GridBagConstraints();
@@ -213,14 +218,13 @@ gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(itemTextField, gridConstraints);
 itemTextField.addActionListener(new ActionListener ()
 {
-public void actionPerformed(ActionEvent e)
-{
-itemTextFieldActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        itemTextFieldActionPerformed(e);
+    }
 });
-gridConstraints.insets = new Insets(10, 10, 0, 10);
-gridConstraints.anchor = GridBagConstraints.EAST;
-getContentPane().add(itemLabel, gridConstraints);
+
+
 locationLabel.setText("Location");
 gridConstraints = new GridBagConstraints();
 gridConstraints.gridx = 1;
@@ -242,10 +246,10 @@ gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(locationComboBox, gridConstraints);
 locationComboBox.addActionListener(new ActionListener ()
 {
-public void actionPerformed(ActionEvent e)
-{
-locationComboBoxActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        locationComboBoxActionPerformed(e);
+    }
 });
 
 markedCheckBox.setText("Marked?");
@@ -254,9 +258,9 @@ gridConstraints = new GridBagConstraints();
 gridConstraints.gridx = 5;
 gridConstraints.gridy = 1;
 gridConstraints.insets = new Insets(10, 10,0,0);
-
 gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(markedCheckBox,gridConstraints);
+
 serialLabel.setText("Serial Number");
 gridConstraints = new GridBagConstraints();
 gridConstraints.gridx = 1;
@@ -276,9 +280,9 @@ serialTextField.addActionListener(new ActionListener ()
 {
 
     public void actionPerformed(ActionEvent e)
-{
-serialTextFieldActionPerformed(e);
-}
+    {
+        serialTextFieldActionPerformed(e);
+    }
 });
 
 priceLabel.setText("Purchase Price");
@@ -301,7 +305,7 @@ priceTextField.addActionListener(new ActionListener ()
 
     public void actionPerformed(ActionEvent e)
     {
-    priceTextFieldActionPerformed(e);
+        priceTextFieldActionPerformed(e);
     }
 });
 dateLabel.setText("Date Purchased");
@@ -322,10 +326,10 @@ gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(dateDateChooser, gridConstraints);
 dateDateChooser.addPropertyChangeListener(new PropertyChangeListener()
 {
-public void propertyChange(PropertyChangeEvent e)
-{
-dateDateChooserPropertyChange(e);
-}
+    public void propertyChange(PropertyChangeEvent e)
+    {
+        dateDateChooserPropertyChange(e);
+    }
 });
 
 storeLabel.setText("Store/Website");
@@ -346,10 +350,10 @@ gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(storeTextField, gridConstraints);
 storeTextField.addActionListener(new ActionListener ()
 {
-public void actionPerformed(ActionEvent e)
-{
-    storeTextFieldActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        storeTextFieldActionPerformed(e);
+    }
 });
 
 noteLabel.setText("Note");
@@ -371,11 +375,12 @@ gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(noteTextField, gridConstraints);
 noteTextField.addActionListener(new ActionListener ()
 {
-public void actionPerformed(ActionEvent e)
-{
-    noteTextFieldActionPerformed(e);
+    public void actionPerformed(ActionEvent e)
+    {
+        noteTextFieldActionPerformed(e);
     }
-    });
+});
+
 photoLabel.setText("Photo");
 gridConstraints=new GridBagConstraints();
 gridConstraints.gridx = 1;
@@ -410,10 +415,10 @@ gridConstraints.anchor = GridBagConstraints.WEST;
 getContentPane().add(photoButton, gridConstraints);
 photoButton.addActionListener(new ActionListener ()
 {
-public void actionPerformed(ActionEvent e)
-{
-photoButtonActionPerformed(e);
-}
+    public void actionPerformed(ActionEvent e)
+    {
+        photoButtonActionPerformed(e);
+    }
 });
 searchPanel.setPreferredSize(new Dimension(240, 160));
 searchPanel.setBorder(BorderFactory.createTitledBorder("Item Search"));
@@ -448,17 +453,18 @@ searchPanel.add(searchButton[i], gridConstraints);
 //add method
 searchButton[i].addActionListener(new ActionListener ()
 {
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e)
+    {
         searchButtonActionPerformed(e);
     }
 });
 x++;
 // six buttons per row
 if (x % 6 == 0)
-{
-x = 0;
-y++;
-}
+    {
+        x = 0;
+        y++;
+    }
 }
 photoPanel.setPreferredSize(new Dimension(240, 160));
 gridConstraints = new GridBagConstraints();
@@ -470,8 +476,7 @@ gridConstraints.anchor = GridBagConstraints.CENTER;
 getContentPane().add(photoPanel, gridConstraints);
 
 pack();
-Dimension screenSize =
-Toolkit.getDefaultToolkit().getScreenSize();
+Dimension screenSize =Toolkit.getDefaultToolkit().getScreenSize();
 setBounds((int) (0.5 * (screenSize.width - getWidth())), (int) (0.5 * (screenSize.height -getHeight())), getWidth(), getHeight());
 
 int n;
@@ -487,25 +492,23 @@ if (numberEntries != 0)
         myInventory[i].description = inputFile.readLine();
         myInventory[i].location = inputFile.readLine();
         myInventory[i].serialNumber = inputFile.readLine();
-        myInventory[i].marked =
-        Boolean.valueOf(inputFile.readLine()).booleanValue();
+        myInventory[i].marked = Boolean.valueOf(inputFile.readLine()).booleanValue();
         myInventory[i].purchasePrice =inputFile.readLine();
 
         myInventory[i].purchaseDate = inputFile.readLine();
-myInventory[i].purchaseLocation =
-inputFile.readLine();
-myInventory[i].note = inputFile.readLine();
-myInventory[i].photoFile = inputFile.readLine();
-}
+        myInventory[i].purchaseLocation =inputFile.readLine();
+        myInventory[i].note = inputFile.readLine();
+        myInventory[i].photoFile = inputFile.readLine();
+    }
 }
 // read in combo box elements
 n = Integer.valueOf(inputFile.readLine()).intValue();
 if (n != 0)
-{
-for (int i = 0; i < n; i++)
-{
-locationComboBox.addItem(inputFile.readLine());
-}
+    {
+        for (int i = 0; i < n; i++)
+    {
+        locationComboBox.addItem(inputFile.readLine());
+    }
 }
 inputFile.close();
 currentEntry = 1;
@@ -532,31 +535,30 @@ return;
 // write entries back to file
 try
 {
-PrintWriter outputFile = new PrintWriter(new BufferedWriter(new
-FileWriter("inventory.txt")));
+PrintWriter outputFile = new PrintWriter(new BufferedWriter(new FileWriter("inventory.txt")));
 outputFile.println(numberEntries);
 if (numberEntries != 0)
 {
-for (int i = 0; i < numberEntries; i++)
-{
-outputFile.println(myInventory[i].description);
-outputFile.println(myInventory[i].location);
-outputFile.println(myInventory[i].serialNumber);
-outputFile.println(myInventory[i].marked);
-outputFile.println(myInventory[i].purchasePrice);
-outputFile.println(myInventory[i].purchaseDate);
-outputFile.println(myInventory[i].purchaseLocation);
-outputFile.println(myInventory[i].note);
-outputFile.println(myInventory[i].photoFile);
-}
+    for (int i = 0; i < numberEntries; i++)
+    {
+        outputFile.println(myInventory[i].description);
+        outputFile.println(myInventory[i].location);
+        outputFile.println(myInventory[i].serialNumber);
+        outputFile.println(myInventory[i].marked);
+        outputFile.println(myInventory[i].purchasePrice);
+        outputFile.println(myInventory[i].purchaseDate);
+        outputFile.println(myInventory[i].purchaseLocation);
+        outputFile.println(myInventory[i].note);
+        outputFile.println(myInventory[i].photoFile);
+    }
 }
 // write combo box entries
 outputFile.println(locationComboBox.getItemCount());
 if (locationComboBox.getItemCount() != 0)
-{
-for (int i = 0; i < locationComboBox.getItemCount(); i++)
-outputFile.println(locationComboBox.getItemAt(i));
-}
+    {
+        for (int i = 0; i < locationComboBox.getItemCount(); i++)
+        outputFile.println(locationComboBox.getItemAt(i));
+    }
 outputFile.close();
 }
 
@@ -573,15 +575,13 @@ blankValues();
 
 private void deleteButtonActionPerformed(ActionEvent e)
 {
-    if (JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this item?",
-"Delete Inventory Item", JOptionPane.YES_NO_OPTION,
-JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
-return;
+    if (JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this item?","Delete Inventory Item", JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE) == JOptionPane.NO_OPTION)
+    return;
 deleteEntry(currentEntry);
 if (numberEntries == 0)
 {
-currentEntry = 0;
-blankValues();
+    currentEntry = 0;
+    blankValues();
 }
 else{
     currentEntry--;
@@ -597,15 +597,15 @@ private void saveButtonActionPerformed(ActionEvent e)
 itemTextField.setText(itemTextField.getText().trim());
 if (itemTextField.getText().equals(""))
 {
-JOptionPane.showConfirmDialog(null, "Must have item description.", "Error",
-JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-itemTextField.requestFocus();
-return;
+    JOptionPane.showConfirmDialog(null, "Must have item description.", "Error",JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+    itemTextField.requestFocus();
+    return;
 }
+
 if (newButton.isEnabled())
 {
-// delete edit entry then resave
-deleteEntry(currentEntry);
+    // delete edit entry then resave
+    deleteEntry(currentEntry);
 }
 // capitalize first letter
 String s = itemTextField.getText();
@@ -618,38 +618,38 @@ if (numberEntries != 1)
 do
 { 
     if(itemTextField.getText().compareTo(myInventory[currentEntry - 1].description) < 0)
-    break;
-    currentEntry++;
+        break;
+        currentEntry++;
     }
     while (currentEntry < numberEntries);
     }
+
     // move all entries below new value down one position unless at end
     if (currentEntry != numberEntries)
     {
-    for (int i = numberEntries; i >= currentEntry + 1; i--)
-    {
-    myInventory[i - 1] = myInventory[i - 2];
-    myInventory[i - 2] = new InventoryItem();
-}
+        for (int i = numberEntries; i >= currentEntry + 1; i--)
+        {
+            myInventory[i - 1] = myInventory[i - 2];
+            myInventory[i - 2] = new InventoryItem();
+        }
 
-}
+    }
 myInventory[currentEntry - 1] = new InventoryItem();
 myInventory[currentEntry - 1].description = itemTextField.getText();
-myInventory[currentEntry - 1].location =
-locationComboBox.getSelectedItem().toString();
+myInventory[currentEntry - 1].location =locationComboBox.getSelectedItem().toString();
 myInventory[currentEntry - 1].marked = markedCheckBox.isSelected();
 myInventory[currentEntry - 1].serialNumber = serialTextField.getText();
 myInventory[currentEntry - 1].purchasePrice = priceTextField.getText();
-myInventory[currentEntry - 1].purchaseDate =
-dateToString(dateDateChooser.getDate());
+myInventory[currentEntry - 1].purchaseDate =dateToString(dateDateChooser.getDate());
 myInventory[currentEntry - 1].purchaseLocation = storeTextField.getText();
 myInventory[currentEntry - 1].photoFile = photoTextArea.getText();
 myInventory[currentEntry - 1].note = noteTextField.getText();
 showEntry(currentEntry);
+
 if (numberEntries < maximumEntries)
-newButton.setEnabled(true);
+    newButton.setEnabled(true);
 else
-newButton.setEnabled(false);
+    newButton.setEnabled(false);
 deleteButton.setEnabled(true);
 printButton.setEnabled(true);
 }
@@ -663,42 +663,41 @@ private void previousButtonActionPerformed(ActionEvent e)
 
 private void printButtonActionPerformed(ActionEvent e)
 {
-lastPage = (int) (1 + (numberEntries - 1) / entriesPerPage);
-PrinterJob inventoryPrinterJob = PrinterJob.getPrinterJob();
-inventoryPrinterJob.setPrintable(new InventoryDocument());
-if (inventoryPrinterJob.printDialog())
-{
-try
-{
-inventoryPrinterJob.print();
+    lastPage = (int) (1 + (numberEntries - 1) / entriesPerPage);
+    PrinterJob inventoryPrinterJob = PrinterJob.getPrinterJob();
+    inventoryPrinterJob.setPrintable(new InventoryDocument());
+    if (inventoryPrinterJob.printDialog())
+    {
+        try
+        {
+            inventoryPrinterJob.print();
+        }
+            catch (PrinterException ex)
+        {
+        JOptionPane.showConfirmDialog(null, ex.getMessage(), "Print Error",JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }
-catch (PrinterException ex)
-{
-JOptionPane.showConfirmDialog(null, ex.getMessage(), "Print Error",
-JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-}
-}
-}
+
 private void exitButtonActionPerformed(ActionEvent e)
 {
-exitForm(null);
+    exitForm(null);
 }
+
 private void photoButtonActionPerformed(ActionEvent e)
 {
 JFileChooser openChooser = new JFileChooser();
 openChooser.setDialogType(JFileChooser.OPEN_DIALOG);
 openChooser.setDialogTitle("Open Photo File");
-openChooser.addChoosableFileFilter(new FileNameExtensionFilter("Photo Files",
-"jpg"));
-if (openChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)
-showPhoto(openChooser.getSelectedFile().toString());
+openChooser.addChoosableFileFilter(new FileNameExtensionFilter("Photo Files","jpg"));
+if (openChooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION)showPhoto(openChooser.getSelectedFile().toString());
 }
 
 private void searchButtonActionPerformed(ActionEvent e)
 {
 int i;
 if (numberEntries == 0)
-return;
+    return;
 // search for item letter
 String letterClicked = e.getActionCommand();
 i = 0;
@@ -706,34 +705,35 @@ do
 {
 if (myInventory[i].description.substring(0, 1).equals(letterClicked))
 {
-currentEntry = i + 1;
-showEntry(currentEntry);
-return;
+    currentEntry = i + 1;
+    showEntry(currentEntry);
+    return;
 }
 i++;
 }
+
 while (i < numberEntries);
-JOptionPane.showConfirmDialog(null, "No " + letterClicked + " inventory items.",
-"None Found", JOptionPane.DEFAULT_OPTION,
-JOptionPane.INFORMATION_MESSAGE);
+JOptionPane.showConfirmDialog(null, "No " + letterClicked + " inventory items.","None Found", JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE);
 }
+
 private void itemTextFieldActionPerformed(ActionEvent e)
 {
-locationComboBox.requestFocus();
+    locationComboBox.requestFocus();
 }
+
 private void locationComboBoxActionPerformed(ActionEvent e)
 {
-// If in list - exit method
-if (locationComboBox.getItemCount() != 0)
-{
-for (int i = 0; i < locationComboBox.getItemCount(); i++)
-{
-if (locationComboBox.getSelectedItem().toString().equals(locationComboBox.getItemAt(i).toString()))
-{
-serialTextField.requestFocus();
-return;
-}
-}
+    // If in list - exit method
+    if (locationComboBox.getItemCount() != 0)
+    {
+        for (int i = 0; i < locationComboBox.getItemCount(); i++)
+    {
+    if (locationComboBox.getSelectedItem().toString().equals(locationComboBox.getItemAt(i).toString()))
+    {
+        serialTextField.requestFocus();
+        return;
+    }
+    }
 }
 // If not found, add to list box
 locationComboBox.addItem(locationComboBox.getSelectedItem());
@@ -764,37 +764,37 @@ photoButton.requestFocus();
 
 private void sizeButton(JButton b, Dimension d)
 {
-b.setPreferredSize(d);
-b.setMinimumSize(d);
-b.setMaximumSize(d);
+    b.setPreferredSize(d);
+    b.setMinimumSize(d);
+    b.setMaximumSize(d);
 }
 
 private void showEntry(int j)
 {
-// display entry j (1 to numberEntries)
-itemTextField.setText(myInventory[j - 1].description);
-locationComboBox.setSelectedItem(myInventory[j - 1].location);
-markedCheckBox.setSelected(myInventory[j - 1].marked);
-serialTextField.setText(myInventory[j - 1].serialNumber);
-priceTextField.setText(myInventory[j - 1].purchasePrice);
-dateDateChooser.setDate(stringToDate(myInventory[j - 1].purchaseDate));
-storeTextField.setText(myInventory[j - 1].purchaseLocation);
-noteTextField.setText(myInventory[j - 1].note);
-showPhoto(myInventory[j - 1].photoFile);
-nextButton.setEnabled(true);
-previousButton.setEnabled(true);
-if (j == 1)
-previousButton.setEnabled(false);
-if (j == numberEntries)
-nextButton.setEnabled(false);
-itemTextField.requestFocus();
+    // display entry j (1 to numberEntries)
+    itemTextField.setText(myInventory[j - 1].description);
+    locationComboBox.setSelectedItem(myInventory[j - 1].location);
+    markedCheckBox.setSelected(myInventory[j - 1].marked);
+    serialTextField.setText(myInventory[j - 1].serialNumber);
+    priceTextField.setText(myInventory[j - 1].purchasePrice);
+    dateDateChooser.setDate(stringToDate(myInventory[j - 1].purchaseDate));
+    storeTextField.setText(myInventory[j - 1].purchaseLocation);
+    noteTextField.setText(myInventory[j - 1].note);
+    showPhoto(myInventory[j - 1].photoFile);
+    nextButton.setEnabled(true);
+    previousButton.setEnabled(true);
+    if (j == 1)
+        previousButton.setEnabled(false);
+    if (j == numberEntries)
+        nextButton.setEnabled(false);
+    itemTextField.requestFocus();
 }
 private Date stringToDate(String s)
 {
-int m = Integer.valueOf(s.substring(0, 2)).intValue() - 1;
-int d = Integer.valueOf(s.substring(3, 5)).intValue();
-int y = Integer.valueOf(s.substring(6)).intValue() - 1900;
-return(new Date(y, m, d));
+    int m = Integer.valueOf(s.substring(0, 2)).intValue() - 1;
+    int d = Integer.valueOf(s.substring(3, 5)).intValue();
+    int y = Integer.valueOf(s.substring(6)).intValue() - 1900;
+    return(new Date(y, m, d));
 }
 private String dateToString(Date dd)
 
@@ -810,24 +810,24 @@ private String dateToString(Date dd)
     {
     if (!photoFile.equals(""))
     {
-    try
-    {
-    photoTextArea.setText(photoFile);
-    }
-    catch (Exception ex)
-    {
-    photoTextArea.setText("");
-    }
+        try
+        {
+            photoTextArea.setText(photoFile);
+        }
+        catch (Exception ex)
+        {
+            photoTextArea.setText("");
+        }
     }
     else
     {
-    photoTextArea.setText("");
+        photoTextArea.setText("");
     }
     photoPanel.repaint();
-    }
+}
     
-    private void blankValues()
-    {
+private void blankValues()
+{
     // blank input screen
     newButton.setEnabled(false);
     deleteButton.setEnabled(false);
@@ -853,154 +853,139 @@ private String dateToString(Date dd)
     // delete entry j
     if (j != numberEntries)
     {
-    // move all entries under j up one level
-    for (int i = j; i < numberEntries; i++)
-    {
-    myInventory[i - 1] = new InventoryItem();
-    myInventory[i - 1] = myInventory[i];
+        // move all entries under j up one level
+        for (int i = j; i < numberEntries; i++)
+        {
+            myInventory[i - 1] = new InventoryItem();
+            myInventory[i - 1] = myInventory[i];
+        }
+        }
+        numberEntries--;
     }
-    }
-    numberEntries--;
-    }
+
     private void checkSave()
     {
     boolean edited = false;
     if (!myInventory[currentEntry - 1].description.equals(itemTextField.getText()))
-    edited = true;
+        edited = true;
     else if (!myInventory[currentEntry -1].location.equals(locationComboBox.getSelectedItem().toString()))
         edited = true;
     else if (myInventory[currentEntry - 1].marked != markedCheckBox.isSelected())
         edited = true;
     else if (!myInventory[currentEntry - 1].serialNumber.equals(serialTextField.getText()))
-    edited = true;
+        edited = true;
     else if (!myInventory[currentEntry - 1].purchasePrice.equals(priceTextField.getText()))
-    edited = true;
-    else if (!myInventory[currentEntry -
-    1].purchaseDate.equals(dateToString(dateDateChooser.getDate())))
-    edited = true;
-    else if (!myInventory[currentEntry -
-    1].purchaseLocation.equals(storeTextField.getText()))
-    edited = true;
+        edited = true;
+    else if (!myInventory[currentEntry -1].purchaseDate.equals(dateToString(dateDateChooser.getDate())))
+        edited = true;
+    else if (!myInventory[currentEntry -1].purchaseLocation.equals(storeTextField.getText()))
+        edited = true;
     else if (!myInventory[currentEntry - 1].note.equals(noteTextField.getText()))
-    edited = true;
+        edited = true;
     else if (!myInventory[currentEntry - 1].photoFile.equals(photoTextArea.getText()))
-    edited = true;
+        edited = true;
     if (edited)
     {
     if (JOptionPane.showConfirmDialog(null, "You have edited this item. Do you want to save the changes?", "Save Item", JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION)
     saveButton.doClick();
     }
     }
-    }
-    class PhotoPanel extends JPanel
-    {
+}
+class PhotoPanel extends JPanel
+{
     public void paintComponent(Graphics g)
     {
-    Graphics2D g2D = (Graphics2D) g;
-    super.paintComponent(g2D);
-    // draw border
-    g2D.setPaint(Color.BLACK);
+        Graphics2D g2D = (Graphics2D) g;
+        super.paintComponent(g2D);
+            // draw border
+        g2D.setPaint(Color.BLACK);
+        g2D.draw(new Rectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1));
+        // show photo
+        Image photoImage = new
+        ImageIcon(HomeInventory.photoTextArea.getText()).getImage();
+        int w = getWidth();
+        int h = getHeight();
+        double rWidth = (double) getWidth() / (double) photoImage.getWidth(null);
+        double rHeight = (double) getHeight() / (double) photoImage.getHeight(null);
+        if (rWidth > rHeight)
+        {
+            // leave height at display height, change width by amount height is changed
+            w = (int) (photoImage.getWidth(null) * rHeight);
+        }
+        else
+        {
+            // leave width at display width, change height by amount width is changed
+            h = (int) (photoImage.getHeight(null) * rWidth);
+        }
+        // center in panel
+        g2D.drawImage(photoImage, (int) (0.5 * (getWidth() - w)), (int) (0.5 * (getHeight() -h)), w, h, null);
 
-    g2D.draw(new Rectangle2D.Double(0, 0, getWidth() - 1, getHeight() - 1));
-// show photo
-Image photoImage = new
-ImageIcon(HomeInventory.photoTextArea.getText()).getImage();
-int w = getWidth();
-int h = getHeight();
-double rWidth = (double) getWidth() / (double) photoImage.getWidth(null);
-double rHeight = (double) getHeight() / (double) photoImage.getHeight(null);
-if (rWidth > rHeight)
-{
-// leave height at display height, change width by amount height is changed
-w = (int) (photoImage.getWidth(null) * rHeight);
-}
-else
-{
-// leave width at display width, change height by amount width is changed
-h = (int) (photoImage.getHeight(null) * rWidth);
-}
-// center in panel
-g2D.drawImage(photoImage, (int) (0.5 * (getWidth() - w)), (int) (0.5 * (getHeight() -
-h)), w, h, null);
-
-g2D.dispose();
+        g2D.dispose();
     }
 }
 
 
 class InventoryDocument implements Printable
 {
-public int print(Graphics g, PageFormat pf, int pageIndex)
-{
-Graphics2D g2D = (Graphics2D) g;
-if ((pageIndex + 1) > HomeInventory.lastPage)
-{
-return NO_SUCH_PAGE;
-}
-int i, iEnd;
-// here you decide what goes on each page and draw it
+    public int print(Graphics g, PageFormat pf, int pageIndex)
+    {
+    Graphics2D g2D = (Graphics2D) g;
+    if ((pageIndex + 1) > HomeInventory.lastPage)
+    {
+    return NO_SUCH_PAGE;
+    }
+    int i, iEnd;
+    // here you decide what goes on each page and draw it
+    // header
+    g2D.setFont(new Font("Arial", Font.BOLD, 14));
+    g2D.drawString("Home Inventory Items - Page " + String.valueOf(pageIndex + 1),(int) pf.getImageableX(), (int) (pf.getImageableY() + 25));
+    // get starting y
+    int dy = (int) g2D.getFont().getStringBounds("S",g2D.getFontRenderContext()).getHeight();
+    int y = (int) (pf.getImageableY() + 4 * dy);
+    iEnd = HomeInventory.entriesPerPage * (pageIndex + 1);
+    if (iEnd > HomeInventory.numberEntries)
+        iEnd = HomeInventory.numberEntries;
+    for (i = 0 + HomeInventory.entriesPerPage * pageIndex; i < iEnd; i++)
+    {
+    // dividing line
+    Line2D.Double dividingLine = new Line2D.Double(pf.getImageableX(), y, pf.getImageableX() + pf.getImageableWidth(), y);
+    g2D.draw(dividingLine);
+    y += dy;
+    g2D.setFont(new Font("Arial", Font.BOLD, 12));
+    g2D.drawString(HomeInventory.myInventory[i].description, (int) pf.getImageableX(), y);
+    y += dy;
+    g2D.setFont(new Font("Arial", Font.PLAIN, 12));
 
-// header
-g2D.setFont(new Font("Arial", Font.BOLD, 14));
-g2D.drawString("Home Inventory Items - Page " + String.valueOf(pageIndex + 1),
-(int) pf.getImageableX(), (int) (pf.getImageableY() + 25));
-// get starting y
-int dy = (int) g2D.getFont().getStringBounds("S",
-g2D.getFontRenderContext()).getHeight();
-int y = (int) (pf.getImageableY() + 4 * dy);
-iEnd = HomeInventory.entriesPerPage * (pageIndex + 1);
-if (iEnd > HomeInventory.numberEntries)
-iEnd = HomeInventory.numberEntries;
-for (i = 0 + HomeInventory.entriesPerPage * pageIndex; i < iEnd; i++)
-{
-// dividing line
-Line2D.Double dividingLine = new
-Line2D.Double(pf.getImageableX(), y, pf.getImageableX() + pf.getImageableWidth(), y);
-g2D.draw(dividingLine);
-y += dy;
-g2D.setFont(new Font("Arial", Font.BOLD, 12));
-g2D.drawString(HomeInventory.myInventory[i].description, (int) pf.getImageableX(), y);
-y += dy;
-g2D.setFont(new Font("Arial", Font.PLAIN, 12));
-
-g2D.drawString("Location: " + HomeInventory.myInventory[i].location, (int)
-(pf.getImageableX() + 25), y);
-y += dy;
-if (HomeInventory.myInventory[i].marked)
-g2D.drawString("Item is marked with identifying information.", (int)
-(pf.getImageableX() + 25), y);
-else
-g2D.drawString("Item is NOT marked with identifying information.", (int)
-(pf.getImageableX() + 25), y);
-y += dy;
-g2D.drawString("Serial Number: " +
-HomeInventory.myInventory[i].serialNumber, (int) (pf.getImageableX() + 25), y);
-y += dy;
-g2D.drawString("Price: $" + HomeInventory.myInventory[i].purchasePrice + ",Purchased on: " + HomeInventory.myInventory[i].purchaseDate, (int) (pf.getImageableX() +
-25), y);
-y += dy;
-g2D.drawString("Purchased at: " +
-HomeInventory.myInventory[i].purchaseLocation, (int) (pf.getImageableX() + 25), y);
-y += dy;
-g2D.drawString("Note: " + HomeInventory.myInventory[i].note, (int)
-(pf.getImageableX() + 25), y);
-y += dy;
-try
-{
-// maintain original width/height ratio
-Image inventoryImage = new
-ImageIcon(HomeInventory.myInventory[i].photoFile).getImage();
-double ratio = (double) (inventoryImage.getWidth(null)) / (double)
-inventoryImage.getHeight(null);
-g2D.drawImage(inventoryImage, (int) (pf.getImageableX() + 25), y, (int) (100 *
-ratio), 100, null);
-}
-catch (Exception ex)
-{
-// have place to go in case image file doesn't open
-}
-y+=2*dy+100;
-}
+    g2D.drawString("Location: " + HomeInventory.myInventory[i].location, (int)
+    (pf.getImageableX() + 25), y);
+    y += dy;
+    if (HomeInventory.myInventory[i].marked)
+    g2D.drawString("Item is marked with identifying information.", (int)(pf.getImageableX() + 25), y);
+    else
+    g2D.drawString("Item is NOT marked with identifying information.", (int)(pf.getImageableX() + 25), y);
+    y += dy;
+    g2D.drawString("Serial Number: " +
+    HomeInventory.myInventory[i].serialNumber, (int) (pf.getImageableX() + 25), y);
+    y += dy;
+    g2D.drawString("Price: $" + HomeInventory.myInventory[i].purchasePrice + ",Purchased on: " + HomeInventory.myInventory[i].purchaseDate, (int) (pf.getImageableX() +25), y);
+    y += dy;
+    g2D.drawString("Purchased at: " +HomeInventory.myInventory[i].purchaseLocation, (int) (pf.getImageableX() + 25), y);
+    y += dy;
+    g2D.drawString("Note: " + HomeInventory.myInventory[i].note, (int)(pf.getImageableX() + 25), y);
+    y += dy;
+    try
+    {
+    // maintain original width/height ratio
+    Image inventoryImage = new ImageIcon(HomeInventory.myInventory[i].photoFile).getImage();
+    double ratio = (double) (inventoryImage.getWidth(null)) / (double) inventoryImage.getHeight(null);
+    g2D.drawImage(inventoryImage, (int) (pf.getImageableX() + 25), y, (int) (100 * ratio), 100, null);
+    }
+    catch (Exception ex)
+    {
+        // have place to go in case image file doesn't open
+    }
+        y+=2*dy+100;
+    }
 return PAGE_EXISTS;
 }
 }
