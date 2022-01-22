@@ -2,7 +2,6 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/home/kali/Downloads/jar_files/jcalendar-1.2.2.jar"
+        "lib/**/*.jar"
     ]
 }
